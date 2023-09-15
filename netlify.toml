@@ -1,2 +1,14 @@
 [build] 
     publish = "public"
+
+[[redirects]]
+    from = "/functions/hello-background"
+    to = "https://sprightly-melba-c465f8.netlify.app/.netlify/functions/hello-background"
+    status = 200
+    force = true
+
+[[redirects]]
+    from = "/functions/hello"
+    to = "https://sprightly-melba-c465f8.netlify.app/.netlify/functions/hello"
+    status = 200
+    force = true

@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", async function () {
-    const baseUrl = 'https://sprightly-melba-c465f8.netlify.app'
+    // const baseUrl = '' // No need to specify the complete URL. We are using "rewrites and proxies." See the redirects inside netlify.toml file. 
     
     // Normal Function
     try {
-        const endpoint = `${baseUrl}/.netlify/functions/hello`
+        const endpoint = `/functions/hello`
 
         const options = {
             method: 'POST',
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     // Background Function
     try {
-        const endpoint = `${baseUrl}/.netlify/functions/hello-background`
+        const endpoint = `/functions/hello-background`
         
         const options = {
             method: 'POST',
@@ -36,7 +36,6 @@ document.addEventListener("DOMContentLoaded", async function () {
         const response = await fetch(endpoint, options)
 
         if (response.status === 202) {
-            // Why doesn't this work?
             console.log('Received 202 from background function.')
         }
         
